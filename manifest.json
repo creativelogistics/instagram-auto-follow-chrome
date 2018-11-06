@@ -1,0 +1,33 @@
+{
+  "name": "Instagram Auto Follow",
+  "version": "0.4",
+  "description": "Auto follow the follow suggestion list of Instagram",
+  "icons": {
+	"128": "assets/images/icon-128x128.png",
+	"64": "assets/images/icon-64x64.png",
+	"48": "assets/images/icon-48x48.png",
+	"32": "assets/images/icon-32x32.png",
+	"16": "assets/images/icon-16x16.png"
+  },
+  "browser_action": {
+      "default_title": "Insta Auto Follow",
+	  "default_icon": {
+	    "128": "assets/images/icon-128x128.png",
+		"64": "assets/images/icon-64x64.png",
+		"48": "assets/images/icon-48x48.png",
+		"32": "assets/images/icon-32x32.png",
+		"16": "assets/images/icon-16x16.png"
+	  },
+      "default_popup": "popup.html"
+  },
+  "short_name": "Instagram Auto Follow",
+  "author": "Kashan Shah",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["assets/js/background.js"],
+    "persistent": false
+  },
+  "manifest_version": 2
+}
