@@ -6,15 +6,15 @@
     <style>
     body {
 		overflow: hidden;
-		margin: 0px 0px 60px;
-		padding: 15px;
+		margin: 0px;
+		padding: 0 0 60px;
 		background: white;
 		width:250px;
-		height:300px;
+		min-height:300px;
 		background: url(assets/images/bg.jpg);
 		background-position:center center;
 		background-size:cover;
-		padding: 0;
+		position:relative;
 	}
 	body:before{
 		content:'';
@@ -31,14 +31,18 @@
 		width:100%;
 	}
 	footer{
-	  position:absolute;
-	  width:100%;
-	  text-align:center;
-	  bottom:0;
-	  left:0;
-	  right:0;
-	  margin:0 auto;
-	  padding:0 15px;
+		position:absolute;
+		width:100%;
+		text-align:center;
+		bottom:0;
+		left:0;
+		right:0;
+		margin:0 auto;
+		padding:0 15px;
+		font-size:12px;
+	}
+	label{
+		
 	}
     </style>
 	<!-- Latest compiled and minified CSS -->
@@ -54,18 +58,36 @@
   <body>
 	<div class="wrapper">
 		<div class="container">
-			<div class="text-center">
-				<h2>Instagram Follow button</h2>
+			<div class="text-left">
+				<h2 class="text-center">Instagram Follow button</h2>
 				<br/>
-				<p>No. of accounts to follow:</p>
-				<input type="number" id="noToFollow" class="form-control" value="1" />
-				<br/>
-				<button class="btn btn-primary btn-xs action-button start-button">START</button>
+				<div class="form-group">
+					<label>Time interval between clicking buttons (sec.):</label>
+					<input type="number" id="time" class="form-control" value="1" />
+				</div>
+				</div>
+				<div class="form-group">
+					<input type="checkbox" id="doScroll" class="scroll-button" value="true" style="display:inline-block;vertical-align:sub;" /> 
+					<label for="doScroll" style="margin-top:7px;">
+						Scroll to bottom as well?
+					</label>
+				</div>
+				<div class="form-group">
+					<div class="scrollIntDiv" style="display:none;">
+						<label>Scroll Interval (sec.):</label>
+						<input type="number" id="scrollInterval" class="form-control" value="5" />
+					</div>
+				</div>
+				<div class="text-center">
+					<button class="btn btn-primary btn-xs action-button start-button">START</button>
+					<button class="btn btn-primary btn-xs action-button stop-button" style="display:none;">STOP</button>
+					<p id="working-on-tab" style="display:none;">Currently working on <span></span> tab</p>
+				</div>
 			</div>
 		</div>
-		<footer>
-			KASHAN SHAH <a href="https://www.kashanshah.ga" target="_blank">www.kashanshah.ga</a>
-		</footer>
 	</div>
+	<footer>
+		KASHAN SHAH <br/><a href="https://www.kashanshah.ga" target="_blank">www.kashanshah.ga</a>
+	</footer>
   </body>
 </html>

@@ -1,21 +1,25 @@
-function startFollowing(cou){
-	if(cou > 0){
-		$("button").each(function(){
-			console.log("STARTED FOLLOWING for "+cou+" times! https://kashanshah.ga");
-			if(cou > 0 && $(this).text() == "Follow"){
-				$(this).click();
-				console.log("start");
-				cou--;
+function startFollowing(time = 1, doScroll = false, scrollTime = 15){
+	scrollTime = scrollTime * 1000;
+	time = time * 1000;
+	cou = 0;
+	var buttons = document.getElementsByTagName("button");
+	var timer = setInterval(function(){
+		if(typeof buttons[cou] !== "undefined"){
+			if(buttons[cou].innerText == "Follow"){
+				buttons[cou].click()
 			}
-			else{
-				console.log("FINISHED");
-			}
-		}).promise().done(function(){
-			startFollowing(cou);
-		});
+			cou++;
+		}
+	}, time);
+	if(doScroll){
+		var scrollTimer = setInterval(function(){
+			window.scrollTo(0,document.querySelector("body").scrollHeight);
+		}, scrollTime);
 	}
 }
 
 function stopFollowing(){
-	clearInterval();
+    for (var i = 1; i < 99999; i++){
+        window.clearInterval(i);
+	}
 }
